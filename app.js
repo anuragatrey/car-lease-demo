@@ -316,6 +316,7 @@ let webAppAdminPassword = configFile.config.registrar_password;
 if (process.env.VCAP_SERVICES) {
     console.log('\n[!] VCAP_SERVICES detected');
     port = process.env.VCAP_APP_PORT;
+    console.log('\n[!] XingCheng port = ' + port);
 } else {
     port = configFile.config.appPort;
 }
@@ -336,6 +337,7 @@ if(configFile.config.hfcProtocol === 'grpcs'){
 if (process.env.VCAP_SERVICES) { // We are running in bluemix
     credentials = JSON.parse(process.env.VCAP_SERVICES)['ibm-blockchain-5-prod'][0].credentials;
     console.log('\n[!] Running in bluemix');
+    console.log('\n[!] XingCheng port = ' + port);
     if (!pem) {
         console.log('\n[!] No certificate is available. Will fail to connect to fabric');
     }
