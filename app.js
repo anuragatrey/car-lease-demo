@@ -315,7 +315,6 @@ let credentials;
 let webAppAdminPassword = configFile.config.registrar_password;
 
 port = configFile.config.appPort;
-console.log('\n[!] XingCheng11111 port = ' + port);
 
 // Setup HFC
 let chain = hfc.newChain('myChain');
@@ -333,7 +332,6 @@ if(configFile.config.hfcProtocol === 'grpcs'){
 if (process.env.VCAP_SERVICES) { // We are running in bluemix
     credentials = JSON.parse(process.env.VCAP_SERVICES)['ibm-blockchain-5-prod'][0].credentials;
     console.log('\n[!] Running in bluemix');
-    console.log('\n[!] XingCheng port = ' + port);
     if (!pem) {
         console.log('\n[!] No certificate is available. Will fail to connect to fabric');
     }
