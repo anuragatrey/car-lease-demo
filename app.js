@@ -313,13 +313,9 @@ let server;
 let registrar;
 let credentials;
 let webAppAdminPassword = configFile.config.registrar_password;
-if (process.env.VCAP_SERVICES) {
-    console.log('\n[!] VCAP_SERVICES detected');
-    port = process.env.VCAP_APP_PORT;
-    console.log('\n[!] XingCheng port = ' + port);
-} else {
-    port = configFile.config.appPort;
-}
+
+port = configFile.config.appPort;
+console.log('\n[!] XingCheng11111 port = ' + port);
 
 // Setup HFC
 let chain = hfc.newChain('myChain');
